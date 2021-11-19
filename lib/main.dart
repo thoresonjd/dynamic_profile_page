@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:dynamic_profile_page/profile_page.dart';
+import 'package:dynamic_profile_page/pages/profile_setup_page.dart';
+import 'package:dynamic_profile_page/pages/profile_display_page.dart';
 
 void main() {
   runApp(const DynamicProfilePageApp());
@@ -13,7 +14,7 @@ class DynamicProfilePageApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: const ProfilePage()
+      home: const ProfileSetupPage()
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:dynamic_profile_page/theme/colors.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({ Key? key }) : super(key: key);
+class ProfileDisplayPage extends StatelessWidget {
+  const ProfileDisplayPage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
