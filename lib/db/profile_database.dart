@@ -47,8 +47,8 @@ class ProfileDatabase {
     return profile.copy(id: id);
   }
 
-  // Read profile
-  Future<Profile> read(int id) async {
+  // Read single profile
+  Future<Profile> readProfile(int id) async {
     final db = await instance.database;
 
     final maps = await db.query(
@@ -60,7 +60,16 @@ class ProfileDatabase {
 
     if (maps.isNotEmpty) {
       return Profile.fromJson(maps.first);
+    } else {
+      throw Exception('ID $id not found');
     }
+  }
+
+  // Read all profiles
+  Future<List<Profile>> readAllProfiles() async {
+    final db = await instance.database;
+    final result = await db.query(profileTable);
+    return result.map((json) => Profile.fromJson(json)).toList();
   }
 
   // Close database
