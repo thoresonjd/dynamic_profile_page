@@ -72,6 +72,17 @@ class ProfileDatabase {
     return result.map((json) => Profile.fromJson(json)).toList();
   }
 
+  // Update a profile
+  Future<int> updateProfile(Profile profile) async {
+    final db = await instance.database;
+    return db.update(
+      profileTable,
+      profile.toJson(),
+      where: '${ProfileFields.id} = ?',
+      whereArgs: [profile.id]
+    );
+  }
+
   // Close database
   Future close() async {
     final db = await instance.database;
