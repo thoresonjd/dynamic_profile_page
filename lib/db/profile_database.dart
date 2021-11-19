@@ -1,3 +1,4 @@
+import 'package:dynamic_profile_page/db/model/profile.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -29,7 +30,13 @@ class ProfileDatabase {
   }
 
   Future _createDB(Database db, int version) async {
-    
+    await db.execute('''
+      CREATE TABLE $profileTable (
+        ${ProfileFields.id} ${ProfileTypes.id},
+        ${ProfileFields.username} ${ProfileTypes.username},
+        ${ProfileFields.description} ${ProfileTypes.description}
+      )
+    ''');
   }
 
   // Close database
