@@ -29,6 +29,7 @@ class ProfileDatabase {
     return await openDatabase(path, version: 1, onCreate: _createDB); // Necessary to define db schema
   }
 
+  // Create database, create table
   Future _createDB(Database db, int version) async {
     await db.execute('''
       CREATE TABLE $profileTable (
@@ -37,6 +38,13 @@ class ProfileDatabase {
         ${ProfileFields.description} ${ProfileTypes.description}
       )
     ''');
+  }
+
+  // Create profile instance
+  Future<void> create(Profile profile) async {
+    final db = await instance.database; // Get database
+    final id = await db.insert(profileTable, profile.toJson());
+    return profile.copy(id: id);
   }
 
   // Close database
