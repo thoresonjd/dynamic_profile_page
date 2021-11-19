@@ -41,10 +41,26 @@ class ProfileDatabase {
   }
 
   // Create profile instance
-  Future<void> create(Profile profile) async {
+  Future<Profile> create(Profile profile) async {
     final db = await instance.database; // Get database
-    final id = await db.insert(profileTable, profile.toJson());
+    final id = await db.insert(profileTable, profile.toJson()); // Insert into database
     return profile.copy(id: id);
+  }
+
+  // Read profile
+  Future<Profile> read(int id) async {
+    final db = await instance.database;
+
+    final maps = await db.query(
+      profileTable,
+      columns: ProfileFields.values,
+      where: '${ProfileFields.id} = ?',
+      whereArgs: [id]
+    );
+
+    if (maps.isNotEmpty) {
+      return Profile.fromJson(maps.first);
+    }
   }
 
   // Close database

@@ -7,6 +7,9 @@ class ProfileTypes {
 }
 
 class ProfileFields {
+  // Column fields
+  static final List<String> values = [id, username, description];
+
   static final String id = '_id';
   static final String username = 'username';
   static final String description = 'description';
@@ -14,12 +17,12 @@ class ProfileFields {
 
 class Profile {
   final int? id;
-  final String? username;
+  String username;
   // TODO: Add profile picture
   // TODO: Add cover photo
-  final String? description;
+  String description;
 
-  const Profile({
+  Profile({
     this.id,
     required this.username,
     required this.description,
@@ -28,8 +31,6 @@ class Profile {
   Profile copy({
     int? id,
     String? username,
-  // TODO: Add profile picture
-  // TODO: Add cover photo
     String? description
   }) =>
     Profile (
@@ -37,6 +38,12 @@ class Profile {
       username: username ?? this.username,
       description: description ?? this.description
     );
+
+  static Profile fromJson(Map<String, Object?> json) => Profile(
+    id: json[ProfileFields.id] as int?,
+    username: json[ProfileFields.username] as String,
+    description: json[ProfileFields.description] as String
+  );
 
   Map<String, Object?> toJson() => {
     ProfileFields.id: id,
