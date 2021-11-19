@@ -1,3 +1,4 @@
+import 'package:dynamic_profile_page/pages/profile_display_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfileSetupPage extends StatelessWidget {
@@ -16,8 +17,13 @@ class ProfileSetupPage extends StatelessWidget {
           children: [
             const Text("Setup"),
             ElevatedButton(
-              onPressed: () {},
-              child: const Text("Submit")
+              child: const Text("Display"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProfileDisplayPage())
+                );
+              }
             )
           ],
         ),
