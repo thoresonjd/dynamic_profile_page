@@ -10,7 +10,18 @@ class ProfileSetupPage extends StatelessWidget {
         title: const Text("Profile"),
         centerTitle: true,
       ),
-      body: const Center(child: Text("Setup"),)
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("Setup"),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("Submit")
+            )
+          ],
+        ),
+      )
     );
   }
 }
