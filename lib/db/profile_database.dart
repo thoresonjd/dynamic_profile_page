@@ -83,6 +83,16 @@ class ProfileDatabase {
     );
   }
 
+  // Delete a profile
+  Future<int> deleteProfile(int id) async {
+    final db = await instance.database;
+    return await db.delete(
+      profileTable,
+      where: '${ProfileFields.id} = ?',
+      whereArgs: [id]
+    );
+  }
+
   // Close database
   Future close() async {
     final db = await instance.database;
