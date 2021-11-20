@@ -5,10 +5,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Profiles Database App!')
-      )
-    );
+    return const Scaffold(body: Center(child: Text("Dynamic profile page app")));
   }
 }
