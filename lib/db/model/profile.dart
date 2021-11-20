@@ -17,10 +17,10 @@ class ProfileFields {
 
 class Profile {
   final int? id;
-  String username;
+  final String username;
   // TODO: Add profile picture
   // TODO: Add cover photo
-  String description;
+  final String description;
 
   Profile({
     this.id,
