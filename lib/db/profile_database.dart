@@ -42,8 +42,8 @@ class ProfileDatabase {
 
   // Create profile instance
   Future<Profile> create(Profile profile) async {
-    final db = await instance.database; // Get database
-    final id = await db.insert(profileTable, profile.toJson()); // Insert into database
+    final db = await instance.database;
+    final id = await db.insert(profileTable, profile.toJson());
     return profile.copy(id: id);
   }
 
