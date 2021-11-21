@@ -1,6 +1,7 @@
 import 'package:dynamic_profile_page/db/profile_database.dart';
 import 'package:dynamic_profile_page/pages/home_page.dart';
 import 'package:dynamic_profile_page/pages/profile_list_page.dart';
+import 'package:dynamic_profile_page/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:dynamic_profile_page/theme/colors.dart';
 
@@ -12,7 +13,7 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  int _currentIndex = 0;
+  int _currentPageIndex = 0;
 
   @override
   void dispose() {
@@ -44,33 +45,34 @@ class _LandingPageState extends State<LandingPage> {
           topRight: Radius.circular(30.0),                                           
           ),                                                                         
           child: BottomNavigationBar(
-            currentIndex: _currentIndex,
+            currentIndex: _currentPageIndex,
             type: BottomNavigationBarType.shifting,
             selectedItemColor: AppColors.magenta,
             unselectedItemColor: AppColors.grey,
-            onTap: (value) {
-              _currentIndex = value;
-              setState(() {});
-            },                                               
-            items: const <BottomNavigationBarItem>[                                        
+            onTap: _changePage,                                              
+            items: const <BottomNavigationBarItem>[          
+              BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),                              
               BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),               
               BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Profiles')                
-            ],                                                                       
+            ],                                                                      
           ),                                                                         
         )                                                                            
       ),
       body: PageView(
         controller: pageController,
         children: const <Widget>[
+          SettingsPage(),
           HomePage(),
           ProfilesPage()
         ],
-        onPageChanged: (page) {
-          setState(() {
-            _currentIndex = page;
-          });
-        },
+        onPageChanged: _changePage
       )
     );
+  }
+
+  void _changePage(int value) {
+    setState(() {
+      _currentPageIndex = value;
+    });
   }
 }
