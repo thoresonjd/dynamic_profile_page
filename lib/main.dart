@@ -1,3 +1,4 @@
+import 'package:dynamic_profile_page/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dynamic_profile_page/pages/profile_list_page.dart';
@@ -22,15 +23,7 @@ class DynamicProfilePageApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: title,
-        themeMode: ThemeMode.dark,
-        theme: ThemeData(
-          primaryColor: AppColors.black,
-          scaffoldBackgroundColor: AppColors.darkGrey,
-          appBarTheme: const AppBarTheme(
-            backgroundColor: AppColors.invis,
-            elevation: 0,
-          ),
-        ),
+        theme: appTheme(),
         home: const ProfilesPage(),
       );
 }
