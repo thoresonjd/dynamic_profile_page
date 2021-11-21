@@ -1,10 +1,10 @@
-final String profileTable = 'profiles';
+const String profileTable = 'profiles';
 
 class ProfileTypes {
-  static final String id = 'INTEGER PRIMARY KEY AUTOINCREMENT';
-  static final String username = 'VARCHAR(20) NOT NULL';
-  static final String description = 'VARCHAR(250) NOT NULL';
-  static final String time = 'TEXT NOT NULL';
+  static const String id = 'INTEGER PRIMARY KEY AUTOINCREMENT';
+  static const String username = 'VARCHAR(20) NOT NULL';
+  static const String description = 'VARCHAR(250) NOT NULL';
+  static const String time = 'TEXT NOT NULL';
 }
 
 class ProfileFields {
@@ -13,10 +13,10 @@ class ProfileFields {
     id, username, description, time
   ];
 
-  static final String id = '_id';
-  static final String username = 'username';
-  static final String description = 'description';
-  static final String time = 'time';
+  static const String id = '_id';
+  static const String username = 'username';
+  static const String description = 'description';
+  static const String time = 'time';
 }
 
 class Profile {
