@@ -32,11 +32,11 @@ class _ProfilesPageState extends State<ProfilesPage> {
     refreshProfiles();
   }
 
-  @override
-  void dispose() {
-    ProfileDatabase.instance.close();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   ProfileDatabase.instance.close();
+  //   super.dispose();
+  // }
 
   Future refreshProfiles() async {
     setState(() => isLoading = true);
