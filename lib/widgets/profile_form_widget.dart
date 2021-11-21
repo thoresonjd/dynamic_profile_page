@@ -23,7 +23,7 @@ class ProfileFormWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           buildTitle(),
-          const SizedBox(height: 8),
+          const Divider(height: 10, color: AppColors.grey),
           buildDescription(),
           const SizedBox(height: 16),
         ],
