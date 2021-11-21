@@ -13,7 +13,11 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  int _currentPageIndex = 0;
+  final List<String> _pageTitles = [
+    'Settings', 'Home', 'Profiles',
+  ];
+
+  int _currentPageIndex = 1;
   final PageController pageController = PageController();
 
   @override
@@ -25,6 +29,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text(_pageTitles[_currentPageIndex])),
       bottomNavigationBar: Container(                                             
         decoration: const BoxDecoration(                                                   
           borderRadius: BorderRadius.only(                                           
