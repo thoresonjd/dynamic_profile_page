@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:dynamic_profile_page/db/profile_database.dart';
 import 'package:dynamic_profile_page/db/model/profile.dart';
-import 'package:dynamic_profile_page/pages/edit_profile_page.dart';
+import 'package:dynamic_profile_page/pages/add_edit_profile_page.dart';
 import 'package:dynamic_profile_page/pages/profile_display_page.dart';
 import 'package:dynamic_profile_page/theme/colors.dart';
 
@@ -47,12 +47,7 @@ class _ProfilesPageState extends State<ProfilesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Profiles',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+      appBar: AppBar(title: const Text('Profiles')),
       body: Center(
         child: isLoading
           ? const CircularProgressIndicator()

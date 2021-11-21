@@ -11,7 +11,8 @@ ThemeData appTheme() {
       elevation: 0,
       titleTextStyle: const TextStyle(
         color: AppColors.white,
-        fontWeight: FontWeight.bold
+        fontWeight: FontWeight.bold,
+        fontSize: 24
       )
     );
   }
