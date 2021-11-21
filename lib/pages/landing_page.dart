@@ -46,6 +46,9 @@ class _LandingPageState extends State<LandingPage> {
           ),                                                                         
           child: BottomNavigationBar(
             currentIndex: currentIndex,
+            type: BottomNavigationBarType.shifting,
+            selectedItemColor: AppColors.magenta,
+            unselectedItemColor: AppColors.grey,
             onTap: (value) {
               currentIndex = value;
 
