@@ -35,7 +35,7 @@ class ProfileFormWidget extends StatelessWidget {
     maxLines: 1,
     initialValue: title,
     style: const TextStyle(
-      color: AppColors.grey,
+      color: AppColors.white,
       fontWeight: FontWeight.bold,
       fontSize: 24,
     ),
@@ -52,7 +52,10 @@ class ProfileFormWidget extends StatelessWidget {
   Widget buildDescription() => TextFormField(
     maxLines: 5,
     initialValue: description,
-    style: const TextStyle(color: AppColors.grey, fontSize: 18),
+    style: const TextStyle(
+      color: AppColors.white, 
+      fontSize: 18
+    ),
     decoration: const InputDecoration(
       border: InputBorder.none,
       hintText: 'Type something about you...',
