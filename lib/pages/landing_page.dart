@@ -14,6 +14,7 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   int _currentPageIndex = 0;
+  final PageController pageController = PageController();
 
   @override
   void dispose() {
@@ -23,7 +24,6 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
-    final PageController pageController = PageController();
     return Scaffold(
       bottomNavigationBar: Container(                                             
         decoration: const BoxDecoration(                                                   
@@ -49,7 +49,7 @@ class _LandingPageState extends State<LandingPage> {
             type: BottomNavigationBarType.shifting,
             selectedItemColor: AppColors.magenta,
             unselectedItemColor: AppColors.grey,
-            onTap: _changePage,                                              
+            onTap: _onTap,                                              
             items: const <BottomNavigationBarItem>[          
               BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),                              
               BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),               
@@ -65,12 +65,20 @@ class _LandingPageState extends State<LandingPage> {
           HomePage(),
           ProfilesPage()
         ],
-        onPageChanged: _changePage
+        onPageChanged: _onPageChanged
       )
     );
   }
 
-  void _changePage(int value) {
+  void _onTap(int value) {
+    pageController.animateToPage(
+      value,
+      duration: const Duration(milliseconds: 250),
+      curve: Curves.linear
+    );
+  }
+
+  void _onPageChanged(int value) {
     setState(() {
       _currentPageIndex = value;
     });
