@@ -22,8 +22,6 @@ class ProfileDatabase {
   }
 
   Future _createDB(Database db, int version) async {
-    
-
     await db.execute('''
       CREATE TABLE $profileTable ( 
         ${ProfileFields.id} ${ProfileTypes.id},
@@ -66,7 +64,6 @@ class ProfileDatabase {
 
   Future<int> updateProfile(Profile profile) async {
     final db = await instance.database;
-
     return db.update(
       profileTable,
       profile.toJson(),
@@ -77,7 +74,6 @@ class ProfileDatabase {
 
   Future<int> deleteProfile(int id) async {
     final db = await instance.database;
-
     return await db.delete(
       profileTable,
       where: '${ProfileFields.id} = ?',

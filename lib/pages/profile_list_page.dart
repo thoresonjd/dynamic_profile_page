@@ -32,12 +32,6 @@ class _ProfilesPageState extends State<ProfilesPage> {
     refreshProfiles();
   }
 
-  // @override
-  // void dispose() {
-  //   ProfileDatabase.instance.close();
-  //   super.dispose();
-  // }
-
   Future refreshProfiles() async {
     setState(() => isLoading = true);
     profiles = await ProfileDatabase.instance.readAllProfiles();
@@ -50,13 +44,13 @@ class _ProfilesPageState extends State<ProfilesPage> {
       appBar: AppBar(title: const Text('Profiles')),
       body: Center(
         child: isLoading
-          ? const CircularProgressIndicator()
+          ? const CircularProgressIndicator(color: AppColors.magenta)
           : profiles.isEmpty
             ? const Text(
                 'No Profiles',
-                style: TextStyle(color: AppColors.white, fontSize: 24),
+                style: TextStyle(color: AppColors.white, fontSize: 24)
               )
-            : buildProfiles(),
+            : buildProfileList(),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
@@ -71,7 +65,7 @@ class _ProfilesPageState extends State<ProfilesPage> {
     );
   }
 
-  Widget buildProfiles() {
+  Widget buildProfileList() {
     return ListView.builder(
       itemCount: profiles.length,
       itemBuilder: (context, index) {
@@ -99,26 +93,4 @@ class _ProfilesPageState extends State<ProfilesPage> {
       }
     );
   }
-  // Widget buildProfiles() => StaggeredGridView.countBuilder(
-  //       padding: const EdgeInsets.all(8),
-  //       itemCount: profiles.length,
-  //       staggeredTileBuilder: (index) => const StaggeredTile.fit(2),
-  //       crossAxisCount: 4,
-  //       mainAxisSpacing: 4,
-  //       crossAxisSpacing: 4,
-  //       itemBuilder: (context, index) {
-  //         final profile = profiles[index];
-  //
-  //         return GestureDetector(
-  //           onTap: () async {
-  //             await Navigator.of(context).push(MaterialPageRoute(
-  //               builder: (context) => ProfileDetailPage(profileId: profile.id!),
-  //             ));
-  //
-  //             refreshProfiles();
-  //           },
-  //           child: ProfileCardWidget(profile: profile, index: index),
-  //         );
-  //       },
-  //     );
 }
