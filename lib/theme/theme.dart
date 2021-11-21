@@ -6,9 +6,9 @@ ThemeData appTheme() {
 
   AppBarTheme _appBarTheme(AppBarTheme base) {
     return base.copyWith(
-      color: AppColors.invis,
+      color: AppColors.darkGrey,
       centerTitle: true,
-      elevation: 0,
+      elevation: 10,
       titleTextStyle: const TextStyle(
         color: AppColors.white,
         fontWeight: FontWeight.bold,
