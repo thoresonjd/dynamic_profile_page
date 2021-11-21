@@ -1,5 +1,5 @@
-import 'package:dynamic_profile_page/page/home_page.dart';
-import 'package:dynamic_profile_page/page/profiles_page.dart';
+import 'package:dynamic_profile_page/pages/home_page.dart';
+import 'package:dynamic_profile_page/pages/profile_list_page.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dynamic_profile_page/db/profile_database.dart';
 import 'package:dynamic_profile_page/db/model/profile.dart';
-import 'package:dynamic_profile_page/widget/profile_form_widget.dart';
+import 'package:dynamic_profile_page/widgets/profile_form_widget.dart';
 
 class AddEditProfilePage extends StatefulWidget {
   final Profile? profile;

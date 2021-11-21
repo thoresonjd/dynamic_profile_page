@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dynamic_profile_page/page/profiles_page.dart';
+import 'package:dynamic_profile_page/pages/profile_list_page.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

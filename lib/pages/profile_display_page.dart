@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:dynamic_profile_page/db/profile_database.dart';
 import 'package:dynamic_profile_page/db/model/profile.dart';
-import 'package:dynamic_profile_page/page/edit_profile_page.dart';
+import 'package:dynamic_profile_page/pages/edit_profile_page.dart';
 
 class ProfileDetailPage extends StatefulWidget {
   final int profileId;
