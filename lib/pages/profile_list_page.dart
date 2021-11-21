@@ -52,7 +52,6 @@ class _ProfilesPageState extends State<ProfilesPage> {
           'Profiles',
           style: TextStyle(fontSize: 24),
         ),
-        actions: const [Icon(Icons.search), SizedBox(width: 12)],
       ),
       body: Center(
         child: isLoading
