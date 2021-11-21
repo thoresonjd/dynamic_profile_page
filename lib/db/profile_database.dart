@@ -25,13 +25,13 @@ class ProfileDatabase {
     
 
     await db.execute('''
-CREATE TABLE $profileTable ( 
-  ${ProfileFields.id} ${ProfileTypes.id},
-  ${ProfileFields.username} ${ProfileTypes.username},
-  ${ProfileFields.description} ${ProfileTypes.description},
-  ${ProfileFields.time} ${ProfileTypes.time}
-  )
-''');
+      CREATE TABLE $profileTable ( 
+        ${ProfileFields.id} ${ProfileTypes.id},
+        ${ProfileFields.username} ${ProfileTypes.username},
+        ${ProfileFields.description} ${ProfileTypes.description},
+        ${ProfileFields.time} ${ProfileTypes.time}
+      )
+    ''');
   }
 
   Future<Profile> create(Profile profile) async {
