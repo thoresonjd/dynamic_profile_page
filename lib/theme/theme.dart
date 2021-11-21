@@ -24,7 +24,7 @@ ThemeData appTheme() {
 
   FloatingActionButtonThemeData _floatingActionButtonTheme(FloatingActionButtonThemeData base) {
     return base.copyWith(
-      backgroundColor: AppColors.red,
+      backgroundColor: AppColors.black,
       foregroundColor: AppColors.white,
     );
   }
