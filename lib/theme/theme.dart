@@ -16,12 +16,6 @@ ThemeData appTheme() {
     );
   }
 
-  ButtonThemeData _buttonTheme(ButtonThemeData base) {
-    return base.copyWith(
-      buttonColor: AppColors.red,
-    );
-  }
-
   FloatingActionButtonThemeData _floatingActionButtonTheme(FloatingActionButtonThemeData base) {
     return base.copyWith(
       backgroundColor: AppColors.black,
@@ -31,7 +25,6 @@ ThemeData appTheme() {
 
   return base.copyWith(
     appBarTheme: _appBarTheme(base.appBarTheme),
-    buttonTheme: _buttonTheme(base.buttonTheme),
     floatingActionButtonTheme: _floatingActionButtonTheme(base.floatingActionButtonTheme)
   );
 }
