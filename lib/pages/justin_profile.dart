@@ -31,13 +31,6 @@ class JustinProfilePage extends StatelessWidget {
                         color: AppColors.invis,
                         height: 30.0
                       ),
-                      // const Text(
-                      //   "NAME",
-                      //   style: TextStyle(
-                      //     color: AppColors.grey,
-                      //     letterSpacing: 2.0
-                      //   )
-                      // ),
                       const Center(
                         child: Text(
                           "Justin Thoreson",
