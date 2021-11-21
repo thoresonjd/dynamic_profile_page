@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:dynamic_profile_page/db/profile_database.dart';
-import 'package:dynamic_profile_page/db/model/profile.dart';
+import 'package:dynamic_profile_page/db/models/profile.dart';
 import 'package:dynamic_profile_page/pages/add_edit_profile_page.dart';
 import 'package:dynamic_profile_page/theme/colors.dart';
 

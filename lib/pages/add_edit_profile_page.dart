@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dynamic_profile_page/db/profile_database.dart';
-import 'package:dynamic_profile_page/db/model/profile.dart';
+import 'package:dynamic_profile_page/db/models/profile.dart';
 import 'package:dynamic_profile_page/widgets/profile_form_widget.dart';
 import 'package:dynamic_profile_page/theme/colors.dart';
 

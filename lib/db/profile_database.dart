@@ -1,6 +1,6 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:dynamic_profile_page/db/model/profile.dart';
+import 'package:dynamic_profile_page/db/models/profile.dart';
 
 class ProfileDatabase {
   static final ProfileDatabase instance = ProfileDatabase._init();
