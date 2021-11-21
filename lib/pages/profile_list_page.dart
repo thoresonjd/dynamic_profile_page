@@ -65,7 +65,6 @@ class _ProfilesPageState extends State<ProfilesPage> {
             : buildProfiles(),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.black,
         child: const Icon(Icons.add),
         onPressed: () async {
           await Navigator.of(context).push(
