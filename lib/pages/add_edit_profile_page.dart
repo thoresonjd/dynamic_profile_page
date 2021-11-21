@@ -54,7 +54,7 @@ class _AddEditProfilePageState extends State<AddEditProfilePage> {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           onPrimary: AppColors.white,
-          primary: isFormValid ? AppColors.red : AppColors.grey,
+          primary: isFormValid ? AppColors.magenta : AppColors.grey,
         ),
         onPressed: addOrUpdateProfile,
         child: const Text('Save'),

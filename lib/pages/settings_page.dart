@@ -10,7 +10,7 @@ class SettingsPage extends StatelessWidget {
     return ListView(
       children: <Widget> [
         ListTile(
-          leading: const Icon(Icons.info),
+          leading: const Icon(Icons.info_outline),
           title: const Text('About'),
           onTap: () async {
             await Navigator.of(context).push(

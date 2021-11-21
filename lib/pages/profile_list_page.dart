@@ -17,14 +17,14 @@ class _ProfilesPageState extends State<ProfilesPage> {
   late List<Profile> profiles;
   bool isLoading = false;
 
-  final _listColors = [
-    AppColors.red,
-    AppColors.orange,
-    AppColors.yellow,
-    AppColors.lime,
-    AppColors.cyan,
-    AppColors.magenta,
-  ];
+  // final _listColors = [
+  //   AppColors.red,
+  //   AppColors.orange,
+  //   AppColors.yellow,
+  //   AppColors.lime,
+  //   AppColors.cyan,
+  //   AppColors.magenta,
+  // ];
 
   @override
   void initState() {
@@ -82,7 +82,7 @@ class _ProfilesPageState extends State<ProfilesPage> {
             padding: const EdgeInsets.all(8.0),
             child: ListTile(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-              tileColor: _listColors[index % _listColors.length],
+              tileColor: AppColors.magenta,//_listColors[index % _listColors.length],
               leading: Text('${profile.id}'),
               title: Text(profile.username),
               trailing: Text(DateFormat.yMMMd().format(profile.createdTime))
