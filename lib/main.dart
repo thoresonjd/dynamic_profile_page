@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dynamic_profile_page/pages/profile_list_page.dart';
+import 'package:dynamic_profile_page/theme/colors.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,10 +24,10 @@ class DynamicProfilePageApp extends StatelessWidget {
         title: title,
         themeMode: ThemeMode.dark,
         theme: ThemeData(
-          primaryColor: Colors.black,
-          scaffoldBackgroundColor: Colors.blueGrey.shade900,
+          primaryColor: AppColors.black,
+          scaffoldBackgroundColor: AppColors.darkGrey,
           appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.transparent,
+            backgroundColor: AppColors.invis,
             elevation: 0,
           ),
         ),

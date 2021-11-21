@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dynamic_profile_page/theme/colors.dart';
 
 class ProfileFormWidget extends StatelessWidget {
   final String? title;
@@ -34,14 +35,14 @@ class ProfileFormWidget extends StatelessWidget {
     maxLines: 1,
     initialValue: title,
     style: const TextStyle(
-      color: Colors.white70,
+      color: AppColors.grey,
       fontWeight: FontWeight.bold,
       fontSize: 24,
     ),
     decoration: const InputDecoration(
       border: InputBorder.none,
       hintText: 'Username',
-      hintStyle: TextStyle(color: Colors.white70),
+      hintStyle: TextStyle(color: AppColors.grey),
     ),
     validator: (username) =>
       username != null && username.isEmpty ? 'Username cannot be empty' : null,
@@ -51,11 +52,11 @@ class ProfileFormWidget extends StatelessWidget {
   Widget buildDescription() => TextFormField(
     maxLines: 5,
     initialValue: description,
-    style: const TextStyle(color: Colors.white60, fontSize: 18),
+    style: const TextStyle(color: AppColors.grey, fontSize: 18),
     decoration: const InputDecoration(
       border: InputBorder.none,
       hintText: 'Type something about you...',
-      hintStyle: TextStyle(color: Colors.white60),
+      hintStyle: TextStyle(color: AppColors.grey),
     ),
     validator: (desc) => desc != null && desc.isEmpty
       ? 'The description cannot be empty'

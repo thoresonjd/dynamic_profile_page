@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:dynamic_profile_page/db/profile_database.dart';
 import 'package:dynamic_profile_page/db/model/profile.dart';
 import 'package:dynamic_profile_page/pages/edit_profile_page.dart';
+import 'package:dynamic_profile_page/theme/colors.dart';
 
 class ProfileDetailPage extends StatefulWidget {
   final int profileId;
@@ -62,14 +63,14 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         const Divider(
-                          color: Colors.transparent,
+                          color: AppColors.invis,
                           height: 30.0
                         ),
                         Center(
                           child: Text(
                             profile.username,
                             style: const TextStyle(
-                              color: Colors.purple,
+                              color: AppColors.magenta,
                               letterSpacing: 2.0,
                               fontWeight: FontWeight.bold,
                               fontSize: 28.0
@@ -80,7 +81,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
                         const Text(
                           "ABOUT",
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: AppColors.grey,
                             letterSpacing: 2.0
                           )
                         ),
@@ -88,7 +89,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
                         Text(
                           profile.description,
                           style: const TextStyle(
-                            color: Colors.purple,
+                            color: AppColors.magenta,
                             letterSpacing: 2.0,
                             fontSize: 15.0
                           )
@@ -97,7 +98,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
                         const Text(
                           "INFO",
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: AppColors.grey,
                             letterSpacing: 2.0
                           )
                         ),
@@ -113,7 +114,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
                             const Text(
                               "thoresonjd",
                               style: TextStyle(
-                                color: Colors.purple,
+                                color: AppColors.magenta,
                                 letterSpacing: 2.0,
                                 fontSize: 15.0
                               )
@@ -125,14 +126,14 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
                           children: <Widget>[
                             Image.asset(
                               "assets/icons/icons8-linkedin-30.png", 
-                              color: Colors.white,
+                              color: AppColors.white,
                               scale: 1.2,
                             ),
                             const SizedBox(width: 10.0),
                             const Text(
                               "/justinthoreson",
                               style: TextStyle(
-                                color: Colors.purple,
+                                color: AppColors.magenta,
                                 letterSpacing: 2.0,
                                 fontSize: 15.0
                               )
@@ -146,7 +147,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
                             Text(
                               "mail@mail.com",
                               style: TextStyle(
-                                color: Colors.purple,
+                                color: AppColors.magenta,
                                 letterSpacing: 2.0,
                                 fontSize: 15.0
                               )
@@ -161,7 +162,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
                             Text(
                               "Insta: @handle",
                               style: TextStyle(
-                                color: Colors.purple,
+                                color: AppColors.magenta,
                                 letterSpacing: 2.0,
                                 fontSize: 15.0
                               )
@@ -172,7 +173,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
                         Text(
                           "LAST UPDATED: " + DateFormat.yMMMd().format(profile.createdTime),
                           style: const TextStyle(
-                            color: Colors.grey,
+                            color: AppColors.grey,
                             letterSpacing: 2.0
                           )
                         ),
@@ -184,7 +185,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
               const Positioned(
                 top: 55,
                 child: CircleAvatar(
-                  backgroundColor: Colors.white,
+                  backgroundColor: AppColors.white,
                   radius: 55.0,
                   child: CircleAvatar(
                     backgroundImage: AssetImage("assets/images/justin_su_id.jpg"),

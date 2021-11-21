@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:dynamic_profile_page/db/profile_database.dart';
 import 'package:dynamic_profile_page/db/model/profile.dart';
 import 'package:dynamic_profile_page/pages/edit_profile_page.dart';
 import 'package:dynamic_profile_page/pages/profile_display_page.dart';
-import 'package:dynamic_profile_page/widgets/profile_card_widget.dart';
+import 'package:dynamic_profile_page/theme/colors.dart';
 
 class ProfilesPage extends StatefulWidget {
   const ProfilesPage({Key? key}) : super(key: key);
@@ -19,13 +18,12 @@ class _ProfilesPageState extends State<ProfilesPage> {
   bool isLoading = false;
 
   final _listColors = [
-    Colors.red,
-    Colors.orange,
-    Colors.yellow,
-    Colors.green,
-    Colors.blue,
-    Colors.indigo,
-    Colors.purple
+    AppColors.red,
+    AppColors.orange,
+    AppColors.yellow,
+    AppColors.lime,
+    AppColors.cyan,
+    AppColors.magenta,
   ];
 
   @override
@@ -62,12 +60,12 @@ class _ProfilesPageState extends State<ProfilesPage> {
           : profiles.isEmpty
             ? const Text(
                 'No Profiles',
-                style: TextStyle(color: Colors.white, fontSize: 24),
+                style: TextStyle(color: AppColors.white, fontSize: 24),
               )
             : buildProfiles(),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black,
+        backgroundColor: AppColors.black,
         child: const Icon(Icons.add),
         onPressed: () async {
           await Navigator.of(context).push(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:dynamic_profile_page/db/profile_database.dart';
 import 'package:dynamic_profile_page/db/model/profile.dart';
 import 'package:dynamic_profile_page/widgets/profile_form_widget.dart';
+import 'package:dynamic_profile_page/theme/colors.dart';
 
 class AddEditProfilePage extends StatefulWidget {
   final Profile? profile;
@@ -52,8 +53,8 @@ class _AddEditProfilePageState extends State<AddEditProfilePage> {
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          onPrimary: Colors.white,
-          primary: isFormValid ? null : Colors.grey.shade700,
+          onPrimary: AppColors.white,
+          primary: isFormValid ? AppColors.lime : AppColors.grey,
         ),
         onPressed: addOrUpdateProfile,
         child: const Text('Save'),
