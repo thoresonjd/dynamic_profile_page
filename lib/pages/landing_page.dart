@@ -12,8 +12,7 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  int currentIndex = 0;
-  Widget screen = const HomePage();
+  int _currentIndex = 0;
 
   @override
   void dispose() {
@@ -23,7 +22,7 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
-
+    final PageController pageController = PageController();
     return Scaffold(
       bottomNavigationBar: Container(                                             
         decoration: const BoxDecoration(                                                   
@@ -45,22 +44,12 @@ class _LandingPageState extends State<LandingPage> {
           topRight: Radius.circular(30.0),                                           
           ),                                                                         
           child: BottomNavigationBar(
-            currentIndex: currentIndex,
+            currentIndex: _currentIndex,
             type: BottomNavigationBarType.shifting,
             selectedItemColor: AppColors.magenta,
             unselectedItemColor: AppColors.grey,
             onTap: (value) {
-              currentIndex = value;
-
-              switch(currentIndex){
-                case 0:
-                  screen = const HomePage();
-                  break;
-                case 1:
-                  screen = const ProfilesPage();
-                  break;
-              }
-
+              _currentIndex = value;
               setState(() {});
             },                                               
             items: const <BottomNavigationBarItem>[                                        
@@ -70,18 +59,18 @@ class _LandingPageState extends State<LandingPage> {
           ),                                                                         
         )                                                                            
       ),
-      body: SafeArea(
-        child: screen
-      ),
+      body: PageView(
+        controller: pageController,
+        children: const <Widget>[
+          HomePage(),
+          ProfilesPage()
+        ],
+        onPageChanged: (page) {
+          setState(() {
+            _currentIndex = page;
+          });
+        },
+      )
     );
-    // final PageController controller = PageController(initialPage: 1);
-    // return PageView(
-    //   scrollDirection: Axis.horizontal,
-    //   controller: controller,
-    //   children: const <Widget>[
-    //     HomePage(),
-    //     ProfilesPage(),
-    //   ],
-    // );
   }
 }
