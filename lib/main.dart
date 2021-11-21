@@ -1,3 +1,4 @@
+import 'package:dynamic_profile_page/pages/landing_page.dart';
 import 'package:dynamic_profile_page/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -23,6 +24,6 @@ class DynamicProfilePageApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: title,
         theme: appTheme(),
-        home: const ProfilesPage(),
+        home: const LandingPage(),
       );
 }
