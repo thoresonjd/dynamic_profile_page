@@ -6,11 +6,10 @@ ThemeData appTheme() {
 
   AppBarTheme _appBarTheme(AppBarTheme base) {
     return base.copyWith(
-      color: AppColors.darkGrey,
       centerTitle: true,
+      backgroundColor: AppColors.darkGrey,
       elevation: 10,
       titleTextStyle: const TextStyle(
-        color: AppColors.white,
         fontWeight: FontWeight.bold,
         fontSize: 24
       )
@@ -24,8 +23,17 @@ ThemeData appTheme() {
     );
   }
 
+  BottomNavigationBarThemeData _bottomNavigationBarTheme(BottomNavigationBarThemeData base) {
+    return base.copyWith(
+      type: BottomNavigationBarType.shifting,
+      selectedItemColor: AppColors.magenta,
+      unselectedItemColor: AppColors.grey,
+    );
+  }
+
   return base.copyWith(
     appBarTheme: _appBarTheme(base.appBarTheme),
-    floatingActionButtonTheme: _floatingActionButtonTheme(base.floatingActionButtonTheme)
+    floatingActionButtonTheme: _floatingActionButtonTheme(base.floatingActionButtonTheme),
+    bottomNavigationBarTheme: _bottomNavigationBarTheme(base.bottomNavigationBarTheme)
   );
 }

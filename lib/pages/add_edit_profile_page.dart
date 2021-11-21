@@ -30,9 +30,7 @@ class _AddEditProfilePageState extends State<AddEditProfilePage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          actions: [buildButton()],
-        ),
+        appBar: AppBar(actions: [buildButton()]),
         body: Form(
           key: _formKey,
           child: ProfileFormWidget(

@@ -29,7 +29,15 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_pageTitles[_currentPageIndex])),
+      appBar:AppBar(
+        title: Text(_pageTitles[_currentPageIndex]),
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30)
+          )
+        ),
+      ),
       bottomNavigationBar: Container(                                             
         decoration: const BoxDecoration(                                                   
           borderRadius: BorderRadius.only(                                           
@@ -46,14 +54,11 @@ class _LandingPageState extends State<LandingPage> {
         ),                                                                           
         child: ClipRRect(                                                            
           borderRadius: const BorderRadius.only(                                           
-          topLeft: Radius.circular(30.0),                                            
-          topRight: Radius.circular(30.0),                                           
+            topLeft: Radius.circular(30.0),                                            
+            topRight: Radius.circular(30.0),                                           
           ),                                                                         
           child: BottomNavigationBar(
             currentIndex: _currentPageIndex,
-            type: BottomNavigationBarType.shifting,
-            selectedItemColor: AppColors.magenta,
-            unselectedItemColor: AppColors.grey,
             onTap: _onTap,                                              
             items: const <BottomNavigationBarItem>[          
               BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),                              
