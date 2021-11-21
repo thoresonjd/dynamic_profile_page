@@ -12,6 +12,9 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  int currentIndex = 0;
+  Widget screen = const HomePage();
+
   @override
   void dispose() {
     ProfileDatabase.instance.close();
@@ -20,6 +23,7 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       bottomNavigationBar: Container(                                             
         decoration: const BoxDecoration(                                                   
@@ -40,16 +44,32 @@ class _LandingPageState extends State<LandingPage> {
           topLeft: Radius.circular(30.0),                                            
           topRight: Radius.circular(30.0),                                           
           ),                                                                         
-          child: BottomNavigationBar(                                                
+          child: BottomNavigationBar(
+            currentIndex: currentIndex,
+            onTap: (value) {
+              currentIndex = value;
+
+              switch(currentIndex){
+                case 0:
+                  screen = const HomePage();
+                  break;
+                case 1:
+                  screen = const ProfilesPage();
+                  break;
+              }
+
+              setState(() {});
+            },                                               
             items: const <BottomNavigationBarItem>[                                        
-              BottomNavigationBarItem(                                               
-                icon: Icon(Icons.home), label: 'Home'),               
-              BottomNavigationBarItem(                                               
-                icon: Icon(Icons.list), label: 'Profiles')                
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),               
+              BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Profiles')                
             ],                                                                       
           ),                                                                         
         )                                                                            
-      )
+      ),
+      body: SafeArea(
+        child: screen
+      ),
     );
     // final PageController controller = PageController(initialPage: 1);
     // return PageView(
