@@ -73,8 +73,8 @@ class _LandingPageState extends State<LandingPage> {
   void _onTap(int value) {
     pageController.animateToPage(
       value,
-      duration: const Duration(milliseconds: 250),
-      curve: Curves.linear
+      duration: const Duration(milliseconds: 200),
+      curve: Curves.easeInOutSine
     );
   }
 
