@@ -7,21 +7,18 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
-      body: ListView(
-        children: <Widget> [
-          ListTile(
-            leading: const Icon(Icons.info),
-            title: const Text('About'),
-            onTap: () async {
-              await Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const AboutPage())
-              );
-            },
-          )
-        ],
-      ),
+    return ListView(
+      children: <Widget> [
+        ListTile(
+          leading: const Icon(Icons.info),
+          title: const Text('About'),
+          onTap: () async {
+            await Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const AboutPage())
+            );
+          },
+        )
+      ],
     );
   }
 }
