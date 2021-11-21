@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'about_page.dart';
+
 class SettingsPage extends StatelessWidget {
   const SettingsPage({ Key? key }) : super(key: key);
 
@@ -12,7 +14,11 @@ class SettingsPage extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.info),
             title: const Text('About'),
-            onTap: () {},
+            onTap: () async {
+              await Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const AboutPage())
+              );
+            },
           )
         ],
       ),
