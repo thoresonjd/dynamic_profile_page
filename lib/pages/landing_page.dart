@@ -19,7 +19,7 @@ class _LandingPageState extends State<LandingPage> {
 
   // Track current page for PageView and BottomNavBar
   int _currentPageIndex = 1;
-  final PageController pageController = PageController();
+  final PageController pageController = PageController(initialPage: 1);
 
   @override
   void dispose() {
@@ -65,11 +65,12 @@ class _LandingPageState extends State<LandingPage> {
               BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),                              
               BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),               
               BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Profiles')                
-            ],                                                                      
-          ),                                                                         
-        )                                                                            
+            ],
+          ),
+        )
       ),
       body: PageView(
+        
         controller: pageController,
         children: const <Widget>[
           SettingsPage(),
