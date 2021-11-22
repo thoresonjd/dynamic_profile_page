@@ -30,7 +30,7 @@ class _AddEditProfilePageState extends State<AddEditProfilePage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(actions: [buildButton()]),
+        appBar: AppBar(actions: [saveButton()]),
         body: Form(
           key: _formKey,
           child: ProfileFormWidget(
@@ -44,7 +44,7 @@ class _AddEditProfilePageState extends State<AddEditProfilePage> {
         ),
       );
 
-  Widget buildButton() {
+  Widget saveButton() {
     final isFormValid = title.isNotEmpty && description.isNotEmpty;
 
     return Padding(

@@ -17,6 +17,7 @@ class _LandingPageState extends State<LandingPage> {
     'Settings', 'Home', 'Profiles',
   ];
 
+  // Track current page for PageView and BottomNavBar
   int _currentPageIndex = 1;
   final PageController pageController = PageController();
 
@@ -29,8 +30,8 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
-        title: Text(_pageTitles[_currentPageIndex]),
+      appBar: AppBar(
+        title: Text(_pageTitles[_currentPageIndex]), // Update AppBar title to current page
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(30),
