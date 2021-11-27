@@ -70,7 +70,6 @@ class _LandingPageState extends State<LandingPage> {
         )
       ),
       body: PageView(
-        
         controller: pageController,
         children: const <Widget>[
           SettingsPage(),
@@ -82,6 +81,7 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
+  // Update PageView on BottomNavBar change
   void _onTap(int value) {
     pageController.animateToPage(
       value,
@@ -90,6 +90,7 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
+  // Update BottomNavBar on PageView change
   void _onPageChanged(int value) {
     setState(() {
       _currentPageIndex = value;

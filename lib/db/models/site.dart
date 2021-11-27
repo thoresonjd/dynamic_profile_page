@@ -8,6 +8,10 @@ class SiteTypes {
 }
 
 class SiteFields {
+  static final List<String> values = [
+    id, site, name
+  ];
+
   static const String id = '_id';
   // TODO: Foreign key
   static const String site = 'site';
