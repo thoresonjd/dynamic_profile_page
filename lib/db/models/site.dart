@@ -30,4 +30,17 @@ class Site {
     required this.site,
     required this.name,
   });
+
+  Site copy({
+    int? id,
+    // TODO: Foreign key
+    String? site,
+    String? name,
+  }) =>
+      Site(
+        id: id ?? this.id,
+        // TODO: Foreign key
+        site: site ?? this.site,
+        name: name ?? this.name
+      );
 }
