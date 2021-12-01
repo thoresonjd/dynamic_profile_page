@@ -17,3 +17,17 @@ class SiteFields {
   static const String site = 'site';
   static const String name = 'name';
 }
+
+class Site {
+  final int? id;
+  // TODO: Foreign key
+  final String site;
+  final String name;
+
+  const Site({
+    this.id,
+    // TODO: Foreign key
+    required this.site,
+    required this.name,
+  });
+}
