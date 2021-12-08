@@ -43,4 +43,11 @@ class Site {
         site: site ?? this.site,
         name: name ?? this.name
       );
+
+  static Site fromJson(Map<String, Object?> json) => Site(
+    id: json[SiteFields.id] as int?,
+    // TODO: Foreign key
+    site: json[SiteFields.site] as String,
+    name: json[SiteFields.name] as String,
+  );
 }
