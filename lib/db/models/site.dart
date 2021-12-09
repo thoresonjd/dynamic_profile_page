@@ -50,4 +50,11 @@ class Site {
     site: json[SiteFields.site] as String,
     name: json[SiteFields.name] as String,
   );
+
+  Map<String, Object?> toJson() => {
+    SiteFields.id: id,
+    // TODO: Foreign key
+    SiteFields.site: site,
+    SiteFields.name: name,
+  };
 }
